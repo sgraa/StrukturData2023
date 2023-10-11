@@ -13,11 +13,10 @@ public:
     Album(const string& t, const string& a, int y) : title(t), artist(a), year(y) {}
 };
 
-void displayMusicLibrary(const list<Album>& musicLibrary, const string& separator) {
+void displayMusicLibrary(const list<Album>& musicLibrary) {
     cout << "Daftar Album Musik:" << endl;
     for (const Album& album : musicLibrary) {
         cout << "Judul: " << album.title << ", Artis: " << album.artist << ", Tahun: " << album.year << endl;
-        cout << separator << endl;
     }
 }
 
@@ -124,7 +123,7 @@ int main() {
             }
 
             case 5: {
-                displayMusicLibrary(musicLibrary, separator); // Menampilkan dengan separator yang lebih panjang
+                displayMusicLibrary(musicLibrary); 
                 break;
             }
 
@@ -133,7 +132,7 @@ int main() {
         }
     }
 
-    displayMusicLibrary(musicLibrary, ""); // Menampilkan daftar album tanpa pemisah
+    displayMusicLibrary(musicLibrary);
 
     return 0;
 }
